@@ -1,0 +1,110 @@
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    background: #d57f14;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #e78c00, #d50003);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #e78c00, #d50003); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Ubuntu', sans-serif !important;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 1.3em;
+    line-height: 2;
+    font-weight: 300;
+    text-rendering: optimizeLegibility;
+}
+
+.App {
+
+}
+
+.jumbotron {
+    padding-top: 20px !important;
+    background-color: #f8f9fa !important;
+}
+
+.spaced {
+    margin: 40px 0 !important;
+}
+
+.navbar {
+    margin-bottom: 10px;
+}
+
+.appIcon {
+    margin-right: 10px;
+}
+
+.wrap{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tag {
+    margin: 2px;
+    background-color: #7f7fd5;
+}
+
+.noDecoration, .noDecoration:hover {
+    text-decoration: none !important;
+    color: inherit;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.align-center-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center
+}
+.align-center-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+.column-flex {
+    display: flex;
+    flex-direction: column;
+}
+
+.row-flex {
+    display: flex;
+    flex-direction: row;
+}
+
+.btn-primary {
+    background-color: #f96b1e !important;
+    border-color: #ee651f !important;
+}
+
+#greetings {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.choice{
+    padding: 10px;
+    border-radius: 2px;
+    border-top: 1px solid lightgrey;
+}
+
+.choice:hover{
+    background-color: rgba(231, 140, 0, 0.2);
+}
+
+.deleteChoice{
+    text-align: right;
+}
