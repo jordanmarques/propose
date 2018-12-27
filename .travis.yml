@@ -12,5 +12,5 @@ deploy:
 notifications:
   email: false
 before_install:
-- openssl aes-256-cbc -K $encrypted_f5bb11657cff_key -iv $encrypted_f5bb11657cff_iv
+- openssl aes-256-cbc -K $encrypted_3016d16efbdd_key -iv $encrypted_3016d16efbdd_iv
   -in src/main/resources/firestore_access.json.enc -out src/main/resources/firestore_access.json -d

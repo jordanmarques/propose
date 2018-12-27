@@ -133,8 +133,6 @@ class ProposalPage extends Component {
             .replace("%attendees%", attendees)
             .replace("%choices%", choices);
 
-        console.log(link);
-
         this.openInNewTab(encodeURI(link))
     }
 }
