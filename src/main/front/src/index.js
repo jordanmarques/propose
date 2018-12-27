@@ -8,7 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 import NavBar from "./components/NavBar";
 import IndexPage from "./pages/IndexPage";
-import ProposalPage from "./pages/proposal/ProposalPage";
+import ProposalPage from "./pages/proposal/edit/ProposalPage";
 import NewProposalPage from "./pages/proposal/new/NewProposalPage";
 
 function App() {

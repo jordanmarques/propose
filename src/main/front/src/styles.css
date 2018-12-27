@@ -24,7 +24,7 @@ body {
 }
 
 .jumbotron {
-    padding-top: 20px !important;
+    padding: 1rem;
     background-color: #f8f9fa !important;
 }
 
@@ -107,4 +107,48 @@ body {
 
 .deleteChoice{
     text-align: right;
+    flex-grow: 1;
+}
+
+.userNameChoice{
+    font-size: 0.7em;
+    flex-grow: 1;
+    width: 100px;
+}
+
+.nameChoice {
+    flex-grow: 2;
+    display: flex;
+    justify-content: center;
+}
+
+.flex-grow-2 {
+    flex-grow: 2;
+}
+
+.dropdownBtnSection {
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 10px;
+}
+
+.newPropositionPanel {
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.3rem;
+    padding: 15px;
+    background-color: #f8f9fa;
+}
+
+.majoritySection {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: right;
+    margin-top: 15px;
+}
+
+.majorityBtn {
+    border: none;
+    color: white;
+    background-image: linear-gradient(to left, #86A8E7, #7F7FD5);
 }
