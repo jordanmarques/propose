@@ -1,10 +1,14 @@
 import React, {Component} from 'react';
 import axios from 'axios'
+import posed from 'react-pose'
 import CenteredPage from "../../../components/CenteredPage";
 import Jumbotron from "../../../components/Jumbotron";
 import Input from "../../../components/Input";
 import Column from "../../../components/Column";
 import Choice from "./Choice";
+import PropositionPanelContent from "./PropositionPanelContent";
+import Arrow from "../../../images/Arrow";
+import ArrowContainer from "./ArrowContainer";
 
 class ProposalPage extends Component {
 
@@ -19,7 +23,8 @@ class ProposalPage extends Component {
             newUrl: "",
             newMail: "",
             newUserName: "",
-            majorityJudgmentLink: ""
+            majorityJudgmentLink: "",
+            isPanelOpen: false
         }
     }
 
@@ -50,17 +55,25 @@ class ProposalPage extends Component {
                         <button className="btn btn-sm majorityBtn" onClick={() => this.exportToMajorityJudgment()}>Export to Majority Judgment</button>
                     </div>
                 </Jumbotron>
-                <div className="newPropositionPanel">
-                    <Input name={"Proposition"} onChange={value => this.setState({newName: value})} value={this.state.newName}/>
-                    <br/>
-                    <Input name={"Url"} placeholder={"You can add a link to help users discover your proposition"} onChange={value => this.setState({newUrl: value})} value={this.state.newUrl}/>
-                    <br/>
-                    <Input name={"Mail"} onChange={value => this.setState({newMail: value})} value={this.state.newMail}/>
-                    <br/>
-                    <Input name={"Your Name"} onChange={value => this.setState({newUserName: value})} value={this.state.newUserName}/>
-                    <br/>
-                    <button className="btn btn-primary uppercase" onClick={() => this.addChoice()}>Add</button>
+                <div className="propositionPanel">
+                    <button className="btn btn-default" onClick={() => this.setState({isPanelOpen: !this.state.isPanelOpen})}>
+                        <ArrowContainer pose={this.state.isPanelOpen ? 'open': 'closed'}>
+                            <Arrow height="25" color="#495057"/>
+                        </ArrowContainer>
+                    </button>
+                    <PropositionPanelContent className="propositionPanelContent" pose={this.state.isPanelOpen ? 'open': 'closed'}>
+                        <Input name={"Proposition"} onChange={value => this.setState({newName: value})} value={this.state.newName}/>
+                        <br/>
+                        <Input name={"Url"} placeholder={"You can add a link to help users discover your proposition"} onChange={value => this.setState({newUrl: value})} value={this.state.newUrl}/>
+                        <br/>
+                        <Input name={"Mail"} onChange={value => this.setState({newMail: value})} value={this.state.newMail}/>
+                        <br/>
+                        <Input name={"Your Name"} onChange={value => this.setState({newUserName: value})} value={this.state.newUserName}/>
+                        <br/>
+                        <button className="btn btn-primary uppercase" onClick={() => this.addChoice()}>Add</button>
+                    </PropositionPanelContent>
                 </div>
+
             </CenteredPage>
         );
     }
@@ -93,7 +106,7 @@ class ProposalPage extends Component {
             metadata: this.state.newUrl,
             ownerName: this.state.newUserName})
             .then(response => {
-                this.setState({choices: response.data.choices, newName: "", newUrl: "", newMail: "", newUserName: ""})
+                this.setState({choices: response.data.choices, newName: "", newUrl: "", newMail: "", newUserName: "", isPanelOpen: false})
             })
     };
 

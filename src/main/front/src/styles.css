@@ -85,6 +85,13 @@ body {
     border-color: #ee651f !important;
 }
 
+.btn-default {
+    border-color: rgba(172, 172, 172, 0.29) !important;
+}
+.btn-default:focus {
+    box-shadow: none !important;
+}
+
 #greetings {
     display: flex;
     flex-direction: column;
@@ -132,7 +139,12 @@ body {
     margin: 10px;
 }
 
-.newPropositionPanel {
+.propositionPanelContent {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+.propositionPanel {
     display: flex;
     flex-direction: column;
     border-radius: 0.3rem;
