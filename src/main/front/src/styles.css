@@ -24,7 +24,7 @@ body {
 }
 
 .jumbotron {
-    padding: 1rem;
+    padding: 0 !important;
     background-color: #f8f9fa !important;
 }
 
@@ -93,6 +93,7 @@ body {
 }
 
 #greetings {
+    padding: 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -156,11 +157,21 @@ body {
     display: flex;
     flex-direction: row-reverse;
     align-items: right;
-    margin-top: 15px;
+    margin-top: 25px;
 }
 
 .majorityBtn {
     border: none;
     color: white;
+    width: 20px;
+    overflow: hidden;
     background-image: linear-gradient(to left, #86A8E7, #7F7FD5);
+}
+
+.majorityBtnText {
+    margin-left: 5px;
+}
+
+.choices {
+    margin: 0 15px;
 }

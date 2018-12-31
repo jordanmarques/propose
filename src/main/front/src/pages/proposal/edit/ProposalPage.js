@@ -9,6 +9,7 @@ import Choice from "./Choice";
 import PropositionPanelContent from "./PropositionPanelContent";
 import Arrow from "../../../images/Arrow";
 import ArrowContainer from "./ArrowContainer";
+import ExternalLink from "../../../images/ExternalLink";
 
 class ProposalPage extends Component {
 
@@ -42,17 +43,32 @@ class ProposalPage extends Component {
 
     render() {
 
+        const MajorityJudgmentButton = posed.button({
+            hoverable: true,
+            init: {
+                width: 40
+            },
+            hover: {
+                width: "auto"
+            }
+        });
+
         return (
             <CenteredPage>
                 <Jumbotron>
                     <h1 className="mb-5 text-center">{this.state.name}</h1>
                     <Column>
-                        {
-                            this.state.choices.map(choice => <Choice key={choice.id} choice={choice} onDelete={this.onDelete}/>)
-                        }
+                        <div className="choices">
+                            {
+                                this.state.choices.map(choice => <Choice key={choice.id} choice={choice} onDelete={this.onDelete}/>)
+                            }
+                        </div>
                     </Column>
                     <div className="majoritySection">
-                        <button className="btn btn-sm majorityBtn" onClick={() => this.exportToMajorityJudgment()}>Export to Majority Judgment</button>
+                        <MajorityJudgmentButton className="btn btn-sm majorityBtn" onClick={() => this.exportToMajorityJudgment()}>
+                            <ExternalLink height="25" color="white"/>&nbsp;
+                            <span className="majorityBtnText">Export to Majority Judgment</span>
+                        </MajorityJudgmentButton>
                     </div>
                 </Jumbotron>
                 <div className="propositionPanel">

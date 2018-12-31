@@ -18,13 +18,15 @@ class NewProposalPage extends Component {
         return (
             <CenteredPage>
                 <Jumbotron>
-                    <AlignCenterColumn>
-                        <h1>Let's create a new Proposal !</h1>
-                        <div className="col col-md-8 mt-3 mb-3">
-                           <Input name={"Proposal Name"} onChange={this.onNameInput}/>
-                        </div>
-                        <button className="btn btn-primary uppercase" onClick={() => this.save()}>Create</button>
-                    </AlignCenterColumn>
+                    <div className="p-3">
+                        <AlignCenterColumn>
+                            <h1>Let's create a new Proposal !</h1>
+                            <div className="col col-md-8 mt-3 mb-3">
+                               <Input name={"Proposal Name"} onChange={this.onNameInput}/>
+                            </div>
+                            <button className="btn btn-primary uppercase" onClick={() => this.save()}>Create</button>
+                        </AlignCenterColumn>
+                    </div>
                 </Jumbotron>
             </CenteredPage>
         );
