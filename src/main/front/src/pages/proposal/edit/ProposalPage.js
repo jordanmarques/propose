@@ -60,7 +60,9 @@ class ProposalPage extends Component {
                     <Column>
                         <div className="choices">
                             {
-                                this.state.choices.map(choice => <Choice key={choice.id} choice={choice} onDelete={this.onDelete}/>)
+                                this.state.choices.length
+                                    ? this.state.choices.map(choice => <Choice key={choice.id} choice={choice} onDelete={this.onDelete}/>)
+                                    : <div className="noChoices">No propositions exist for this proposal. Make one!</div>
                             }
                         </div>
                     </Column>

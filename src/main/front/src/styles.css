@@ -175,3 +175,8 @@ body {
 .choices {
     margin: 0 15px;
 }
+
+.noChoices {
+    text-align: center;
+    color: grey;
+}

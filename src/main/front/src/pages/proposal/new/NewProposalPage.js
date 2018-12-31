@@ -43,7 +43,10 @@ class NewProposalPage extends Component {
 
         axios.post("/api/proposal", Object.assign({}, {name: this.state.name}))
             .then(response => {
-                this.props.history.push("/proposal/" + response.data.id)
+                setTimeout(()=>{
+                    this.props.history.push("/proposal/" + response.data.id)
+                }, 500);
+
             })
     }
 }
