@@ -150,7 +150,7 @@ class ProposalPage extends Component {
         win.focus();
     };
 
-    exportToMajorityJudgment() {
+    exportToMajorityJudgment = () => {
         const title = this.state.name;
         const attendees = this.state.choices
             .map(choice => choice.owner)
@@ -159,13 +159,22 @@ class ProposalPage extends Component {
             .map(choice => choice.name)
             .join("|");
 
-        const link = this.state.majorityJudgmentLink
-            .replace("%title%", title)
-            .replace("%attendees%", attendees)
-            .replace("%choices%", choices);
+        const link = this.replaceLinkTemplateByValues(this.state.majorityJudgmentLink, title, attendees, choices);
 
         this.openInNewTab(encodeURI(link))
+    };
+
+    sanitize = (link) => {
+        return link.replace(/\./g, "");
+    };
+
+    replaceLinkTemplateByValues = (link, title, attendees, choices) => {
+        return link.replace("%title%", title)
+            .replace("%attendees%", attendees)
+            .replace("%choices%", this.sanitize(choices));
     }
+
+
 }
 
 
