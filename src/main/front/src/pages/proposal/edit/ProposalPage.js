@@ -129,6 +129,10 @@ class ProposalPage extends Component {
     };
 
     onDelete = (id) => {
+
+        const wantToDelete = window.confirm("Do you really want to delete this proposition ?")
+        if(!wantToDelete) return;
+
         axios.delete(`/api/proposal/${this.state.id}/choices/${id}`)
             .then(response => {
                 this.setState({choices: response.data.choices})
