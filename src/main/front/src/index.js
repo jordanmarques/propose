@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import * as serviceWorker from './serviceWorker';
 
 import {BrowserRouter as Router, Route} from "react-router-dom";
 
@@ -13,7 +14,6 @@ import NewProposalPage from "./pages/proposal/new/NewProposalPage";
 
 function App() {
     return (
-
         <Router>
             <div className="App">
                 <NavBar/>
@@ -26,5 +26,7 @@ function App() {
 }
 
 const rootElement = document.getElementById("root");
+
+serviceWorker.unregister();
 
 ReactDOM.render(<App/>, rootElement);
